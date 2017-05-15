@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.techware.callMyCab"
+        id        = "com.phonegap.callMyCab"
         version   = "1.0.0">
 
-    <name>CallMyCab</name>
+    <name>PCAB</name>
 
     <description>
-        Call My Cab mobile application for taxi cab booking system.
+        PCab mobile application for taxi cab booking system.
     </description>
 
-    <author href="http://techware.co.in/" email="info@techware.co.in">
-        Techware Solution
+    <author href="http://www.kfinsolutions.com/" email="support@kfinsolutions.com">
+        KFIN Solutions
     </author>
 		
 		
@@ -80,10 +80,10 @@
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
-    <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
-    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
-    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
-    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="res/icon/android/android-icon-36x36.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="res/icon/android/android-icon-48x48.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="res/icon/android/android-icon-72x72.png"   gap:platform="android"    gap:qualifier="hdpi" />
+    <icon src="res/icon/android/android-icon-96x96.png"  gap:platform="android"    gap:qualifier="xhdpi" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
     <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
     <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
