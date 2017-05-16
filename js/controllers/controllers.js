@@ -41,7 +41,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 						historyRoot: true
 				});
 				
-				//$state.go('app.landing', {}, {reload: true}); 
+				$state.go('app.landing', {}, {reload: true}); 
 				//$state.go('app.landing');
 			}
 		}
@@ -143,7 +143,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 					$rootScope.user_data = JSON.parse( localStorage.getItem('user_data') );
 					
 					$scope.modal.sign_in.hide();
-					//$state.go('app.landing', {}, {reload: true}); 
+					$state.go('app.landing', {}, {reload: true}); 
 				 }
 				 
 			 })
@@ -218,7 +218,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 						$rootScope.user_data = JSON.parse( localStorage.getItem('user_data') );
 					  
 						$scope.modal.sign_up.hide();
-						//$state.go('app.landing', {}, {reload: true}); 
+						$state.go('app.landing', {}, {reload: true}); 
 				 }
 				 
 			 })
@@ -364,7 +364,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 							
 							$rootScope.user_data = JSON.parse( localStorage.getItem('user_data') );
 							
-							//$state.go('app.landing', {}, {reload: true}); 
+							$state.go('app.landing', {}, {reload: true}); 
 							
 						 }
 						 
