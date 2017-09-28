@@ -41,10 +41,10 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 	 /* Function For Get place from LatLng
 	 ==================================================*/
 	 function codeLatLng(lat, lng) {
-		    $scope.loading = $ionicLoading.show({
+		/*    $scope.loading = $ionicLoading.show({
           content: 'Getting current location...',
           showBackdrop: false
-        });
+        });*/
 		geocoder = new google.maps.Geocoder();
 		
 		var latlng = new google.maps.LatLng(lat, lng);
@@ -52,7 +52,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 		  if (status == google.maps.GeocoderStatus.OK) {
 		  // console.log(results)
 			if (results[1]) {
-			
+				alert("Resultados geo");
 				$scope.$apply(function(){
 					$scope.Location = results[0].formatted_address ;
 					$scope.start_box.location = results[0].formatted_address ;
