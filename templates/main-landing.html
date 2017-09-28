@@ -2,7 +2,7 @@
 <ion-view>
 	
 	<ion-nav-title>
-	 <div class='color-yellow text-center'>{{ 'CallMyCab' | langTranslate: appConvertedLang['CallMy_Cab'] }}</div>
+	 <div class='color-yellow text-center'><img ng-src='img/logo2.png' style='height: 100%' /></div>
   </ion-nav-title>
 	
 	<ion-content  scroll='false' drag-content="false">
@@ -92,13 +92,13 @@
     
 	<ion-footer-bar class="bg-dark" >
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == false'>
-			<div class='w-50-p pull-left my-button h-100-p text-center border-r-yellow' ng-click='ride("later")'>{{ 'RIDE LATER' | langTranslate: appConvertedLang['RIDE_LATER'] }}</div>
-			<div class='w-50-p pull-left my-button h-100-p text-center'  ng-click='ride("now")'>{{ 'RIDE NOW' | langTranslate: appConvertedLang['RIDE_NOW'] }}</div>
+			<div class='w-100-p pull-left my-button h-100-p text-center border-r-yellow' ng-click='ride("later")'>RESERVAR VAN</div>
+			<!-- <div class='w-50-p pull-left my-button h-100-p text-center'  ng-click='ride("now")'>{{ 'RIDE NOW' | langTranslate: appConvertedLang['RIDE_NOW'] }}</div>-->
 		</div> 
 		
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == true'>
-			<div class='w-100-p my-button h-100-p text-center border-r-yellow'  ng-click='cancel()' >{{ 'Cancel' | langTranslate: appConvertedLang['Cancel'] }}</div>
-			<div class='w-100-p my-button h-100-p text-center'  ng-click='book()'>{{ 'Reservar VAN' | langTranslate: appConvertedLang['Book'] }}</div>
+			<div class='w-50-p my-button h-100-p text-center border-r-yellow'  ng-click='cancel()' >{{ 'Cancel' | langTranslate: appConvertedLang['Cancel'] }}</div>
+			<div class='w-50-p my-button h-100-p text-center'  ng-click='book()'>{{ 'Book' | langTranslate: appConvertedLang['Book'] }}</div>
 		</div>
 		
 	</ion-footer-bar>

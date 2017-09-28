@@ -111,9 +111,9 @@
 		 
 	this.show_loading = function(){
 		
-			$ionicLoading.show({
-          content: 'Loading',
-          showBackdrop: false
+			//$ionicLoading.show({
+          //content: 'Loading',
+          //showBackdrop: false
       });
 			
 	 } 
