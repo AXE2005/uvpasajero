@@ -114,7 +114,7 @@
 			//$ionicLoading.show({
           //content: 'Loading',
           //showBackdrop: false
-      });
+      //});
 			
 	 } 
  })
