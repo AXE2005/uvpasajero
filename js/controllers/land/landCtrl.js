@@ -52,7 +52,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 		  if (status == google.maps.GeocoderStatus.OK) {
 		  // console.log(results)
 			if (results[1]) {
-				alert("Resultados geo");
+				//alert("Resultados geo"); SI lo muestra
 				$scope.$apply(function(){
 					$scope.Location = results[0].formatted_address ;
 					$scope.start_box.location = results[0].formatted_address ;
