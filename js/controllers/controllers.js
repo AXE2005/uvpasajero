@@ -186,7 +186,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 								'Name'			: "ibnu",
 							 }
 	  */	
-  		WebService.show_loading();	
+  		//WebService.show_loading();	
 			 
 			 var promise = WebService.send_data( link,post_data);
 			 
@@ -230,7 +230,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 			form.mail.$setDirty();
 			form.name.$setDirty();
 			form.user_name.$setDirty();
-			
+			$ionicLoading.hide();
 		}	
   
 	};
