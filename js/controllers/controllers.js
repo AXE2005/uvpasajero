@@ -127,7 +127,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 				 if(data.status == 'failed'){
 					$scope.login.message = data.message;
 				 }else if(data.status == 'success'){
-					alert(JSON.stringify(data,null,4));
+					//alert(JSON.stringify(data,null,4));
 					
 					var user_data = { "Id"        : data.id, 
 														"Name"      : data.mobile,

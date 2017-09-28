@@ -87,7 +87,7 @@
 							 //alert(JSON.stringify(data.data));
 							deferred.resolve(data.data);		
 						},function (error){
-							/*
+							
 							alert(error.status +" "+ error.statusText);
 							// alert(JSON.stringify(error,null,4));
 							if(error.status == 404){
@@ -96,7 +96,7 @@
 							else{
 								alert('sorry! an error occured');
 							}
-							*/
+							
 							// self.remove_loading();
 							$ionicLoading.hide();
 							deferred.reject();

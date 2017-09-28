@@ -2,7 +2,7 @@
 App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compile, $ionicModal,$window,$timeout,$ionicPopup, landInit, WebService,$filter) {
 	
 	
-	
+	$ionicLoading.hide();
 	/* Funtion For set Map
 	=========================================================== */
 	
@@ -14,7 +14,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			var styledMap = new google.maps.StyledMapType(styles,
 			{name: "Styled Map"});
 	
-			var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
+			var myLatlng = new google.maps.LatLng(4.69404598,-74.07848639);
         
 			var mapOptions = {
 			  center: myLatlng,
@@ -62,14 +62,14 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 				$scope.current_box = angular.copy( $scope.start_box );
 				
 			} else {
-			  //alert("No results found");
+			  alert("No results found");
 			  // $scope.Location = "You are here";
 			  
 			}
 		  } else {
 			  // $scope.Location = "You are here";
 			  
-			//alert("Geocoder failed due to: " + status);
+			alert("Geocoder failed due to: " + status);
 		  }
 		});
 	  }
@@ -214,7 +214,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 	 
 	 
 	 // alert( $scope.user_data.Name )
-	 $scope.Location= 'You are here';
+	 $scope.Location= 'Estas Aqui';
 	 $scope.start_box = { 'location' : null, 'lat': null, 'lng' : null };
 	 $scope.end_box = {  'location' : null, 'lat': null, 'lng' : null };
 	 $scope.start_box_copy, $scope.end_box_copy ,current_box = {}
