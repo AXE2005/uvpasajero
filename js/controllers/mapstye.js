@@ -34,7 +34,7 @@ function initialize() {
   // to the map type control.
   var mapOptions = {
     zoom: 11,
-    center: new google.maps.LatLng(55.6468, 37.581),
+    center: new google.maps.LatLng(4.693675, -74.078496),
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
     }

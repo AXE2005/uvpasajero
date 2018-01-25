@@ -41,7 +41,7 @@
 				<div class='head-box text-center'>
 					<div class='vertical-middle'>
 						<span class='color-yellow d-block '>{{selected_cab.cartype}}</span>
-						<span class='color-gery d-block'>{{ 'Toyota etios, tata indigo, maruti dezire.' | langTranslate: appConvertedLang['Toyota_etios_tata_indigo_maruti_dezire'] }}</span>
+						<span class='color-gery d-block'>Servicio de Transporte Coorporativo</span>
 					</div>
 				</div>
 			
@@ -53,24 +53,67 @@
 					<div class="row ">
 						<div class="item-rate col col-33">
 							<div class='vertical-middle'>
-								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span> {{selected_cab.intailrate}}</b></p>
-								<p class='color-gery'>{{ 'First' | langTranslate: appConvertedLang['First'] }}{{ selected_cab.intialkm }}km</p>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span> {{selected_cab.aerotray}}</b></p>
+								<p class='color-gery'>Aeropuerto/Trayecto</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33">
 							<div class='vertical-middle'>
-								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.standardrate}}/km</b></p>
-								<p class='color-gery'> {{ 'After' | langTranslate: appConvertedLang['After'] }} {{ selected_cab.intialkm }}km</p>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.aeroreco}}</b></p>
+								<p class='color-gery'>Recogida en aerop & recepci&oacute;n</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33 no-border">
 							<div class='vertical-middle'>
-								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>1/min</b></p>
-								<p class='color-gery'>{{ 'Ride time rate' | langTranslate: appConvertedLang['Ridetime_rate'] }}</p>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp8}}</b></p>
+								<p class='color-gery'>Disponibilidad 8 Horas Bta</p>
 							</div>
 						</div>
 					</div>
-					<p class='color-gery f-size-12 p10'>{{ 'Airport rate may differ, peak  time charges may apply.' | langTranslate: appConvertedLang['Airport_rate_may_differ_peaktime_chargesmayapply'] }}</p>
+						
+					<div class="row ">
+						<div class="item-rate col col-33 no-border">
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp12}}</b></p>
+								<p class='color-gery'>Disponibilidad 12 Horas Bta</p>
+							</div>
+						</div>
+						<div class="item-rate col col-33">
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp24}}</b></p>
+								<p class='color-gery'>Disponibilidad 24 Horas Bta</p>
+							</div>
+						</div>
+						<div class="item-rate col col-33 no-border">
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.achiag}}</b></p>
+								<p class='color-gery'>Andres Ch&iacute;a x Guaymaral</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row ">
+						<div class="item-rate col col-33 no-border">
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp12}}</b></p>
+								<p class='color-gery'>Andres Ch&iacute;a x autonorte</p>
+							</div>
+						</div>
+						<div class="item-rate col col-33">
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp24}}</b></p>
+								<p class='color-gery'>CityTour</p>
+							</div>
+						</div>
+						<div class="item-rate col col-33 no-border">
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.achiag}}</b></p>
+								<p class='color-gery'>Tour de La Sabana</p>
+							</div>
+						</div>
+					</div>	
+																												
+					<p class='color-gery f-size-12 p10'>Más info tabla de tarifas en el menu principal</p>
 				</div>
 				
 			</div>
@@ -98,7 +141,7 @@
 		
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == true'>
 			<div class='w-50-p my-button h-100-p text-center border-r-yellow'  ng-click='cancel()' >{{ 'Cancel' | langTranslate: appConvertedLang['Cancel'] }}</div>
-			<div class='w-50-p my-button h-100-p text-center'  ng-click='book()'>{{ 'Book' | langTranslate: appConvertedLang['Book'] }}</div>
+			<div class='w-50-p my-button h-100-p text-center'  ng-click='book()'>Reservar</div>
 		</div>
 		
 	</ion-footer-bar>

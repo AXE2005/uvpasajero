@@ -63,11 +63,11 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 				
 			} else {
 			  alert("No results found");
-			  // $scope.Location = "You are here";
+			   $scope.Location = "You are here";
 			  
 			}
 		  } else {
-			  // $scope.Location = "You are here";
+			   $scope.Location = "You are here";
 			  
 			alert("Geocoder failed due to: " + status);
 		  }
@@ -79,8 +79,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
           return;
         }
 			
-        
-		/**/
+
 		var contentString = "<div style='width: 200px'><a  ng-click='clickTest()'>{{Location}}</a></div>";
         var compiled = $compile(contentString)($scope);
 
@@ -90,17 +89,17 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
           content: compiled[0]
         });
 		
-		/**/
+
         navigator.geolocation.getCurrentPosition(function(pos) {
 			//console.log(pos);
 			
-			//alert(JSON.stringify(pos));
-		   var myLatlng	= new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+			alert(JSON.stringify(pos));
+			var myLatlng	= new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
 			
 			$scope.start_box.lat = pos.coords.latitude;
 			$scope.start_box.lng = pos.coords.longitude;
 			
-			
+			// axe - aqui pongo el marcador en mi pos latlang 
 			codeLatLng( pos.coords.latitude, pos.coords.longitude );
 			
 			var marker = new google.maps.Marker({
