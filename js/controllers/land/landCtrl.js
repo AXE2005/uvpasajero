@@ -357,7 +357,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 				 promise.then(function(data){  
 					 
 					 $ionicLoading.hide();
-					 //alert(JSON.stringify(data,null,4));
+					 alert(JSON.stringify(data,null,4));
 					 
 					 if( data.cabs.length == 0 ){
 						alert('no cabs')

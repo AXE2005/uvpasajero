@@ -41,7 +41,7 @@
 				<div class='head-box text-center'>
 					<div class='vertical-middle'>
 						<span class='color-yellow d-block '>{{selected_cab.cartype}}</span>
-						<span class='color-gery d-block'>Servicio de Transporte Coorporativo</span>
+						<span class='color-gery d-block'>Elija el no de puestos que requiere</span>
 					</div>
 				</div>
 			
@@ -53,7 +53,7 @@
 					<div class="row ">
 						<div class="item-rate col col-33">
 							<div class='vertical-middle'>
-								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span> {{selected_cab.aerotray}}</b></p>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span> {{selected_cab.intialkm}}</b></p>
 								<p class='color-gery'>Aeropuerto/Trayecto</p>
 							</div>
 						</div>
@@ -135,8 +135,8 @@
     
 	<ion-footer-bar class="bg-dark" >
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == false'>
-			<div class='w-100-p pull-left my-button h-100-p text-center border-r-yellow' ng-click='ride("later")'>RESERVAR VAN</div>
-			<!-- <div class='w-50-p pull-left my-button h-100-p text-center'  ng-click='ride("now")'>{{ 'RIDE NOW' | langTranslate: appConvertedLang['RIDE_NOW'] }}</div>-->
+			<div class='w-50-p pull-left my-button h-100-p text-center ' ng-click='ride("later")'>RESERVAR VAN</div>
+			<div class='w-50-p pull-left my-button h-100-p text-center'  ng-click='ride("now")'>{{ 'RIDE NOW' | langTranslate: appConvertedLang['RIDE_NOW'] }}</div>
 		</div> 
 		
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == true'>
