@@ -171,11 +171,7 @@ App.factory("landInit", function ($rootScope) {
 		init_cirlce : function(){
 		}
 		*/
-		
-		document.addEventListener("deviceready", onDeviceReady2, false);
-		function onDeviceReady2() {
-			alert(navigator.camera);
-		}		
+	
 	};
 });
 
