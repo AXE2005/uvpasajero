@@ -69,8 +69,10 @@
         <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.5.0" />
         <gap:plugin name="cordova-plugin-network-information" source="npm"  spec="~1.3.0" />
         <gap:plugin name="cordova-plugin-splashscreen" source="npm" spec="~4.0.0" />
+		<gap:plugin name="cordova-plugin-camera" source="npm" />
+		<gap:plugin name="cordova-plugin-file" source="npm" />
+		
 		<plugin name="cordova-plugin-camera" source="npm" />
-		<plugin name="cordova-plugin-file" source="npm" />
 		
 		<!-- <gap:plugin name="cordova-plugin-whitelist" version="1.0.0"  /> -->
     <!-- Third party plugins -->
