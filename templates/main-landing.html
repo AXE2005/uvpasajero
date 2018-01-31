@@ -53,14 +53,14 @@
 					<div class="row ">
 						<div class="item-rate col col-33">
 							<div class='vertical-middle'>
-								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span> {{selected_cab.intialkm}}</b></p>
-								<p class='color-gery'>Aeropuerto/Trayecto</p>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span> {{selected_cab.aerotray}}</b></p>
+								<p class='color-gery'>Aeropuerto</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33">
 							<div class='vertical-middle'>
 								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.aeroreco}}</b></p>
-								<p class='color-gery'>Recogida en aerop & recepci&oacute;n</p>
+								<p class='color-gery'>Recepci&oacute;n Aerop</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33 no-border">
@@ -113,7 +113,7 @@
 						</div>
 					</div>	
 																												
-					<p class='color-gery f-size-12 p10'>Más info tabla de tarifas en el menu principal</p>
+					<p class='color-gery f-size-12 p10'>Más info y per&iacute;metro en el menu principal</p>
 				</div>
 				
 			</div>
@@ -135,13 +135,12 @@
     
 	<ion-footer-bar class="bg-dark" >
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == false'>
-			<div class='w-50-p pull-left my-button h-100-p text-center ' ng-click='ride("later")'>RESERVAR VAN</div>
-			<div class='w-50-p pull-left my-button h-100-p text-center'  ng-click='ride("now")'>{{ 'RIDE NOW' | langTranslate: appConvertedLang['RIDE_NOW'] }}</div>
+			<div class='w-100-p pull-left my-button h-100-p text-center ' ng-click='ride("later")'>RESERVAR VAN</div>
 		</div> 
 		
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == true'>
-			<div class='w-50-p my-button h-100-p text-center border-r-yellow'  ng-click='cancel()' >{{ 'Cancel' | langTranslate: appConvertedLang['Cancel'] }}</div>
-			<div class='w-50-p my-button h-100-p text-center'  ng-click='book()'>Reservar</div>
+			<div class='w-50-p my-button h-100-p text-center border-r-yellow'  ng-click='book()' >{{ 'Cancel' | langTranslate: appConvertedLang['Cancel'] }}</div>
+			<div class='w-50-p my-button h-100-p text-center'  ng-click='cancel()'>{{ 'Book' | langTranslate: appConvertedLang['Book'] }}</div>
 		</div>
 		
 	</ion-footer-bar>
