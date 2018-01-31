@@ -2,7 +2,7 @@
 App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compile, $ionicModal,$window,$timeout,$ionicPopup, landInit, WebService,$filter) {
 	
 	
-	$ionicLoading.hide();
+	
 	/* Funtion For set Map
 	=========================================================== */
 	
@@ -14,7 +14,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			var styledMap = new google.maps.StyledMapType(styles,
 			{name: "Styled Map"});
 	
-			var myLatlng = new google.maps.LatLng(4.69404598,-74.07848639);
+			var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
         
 			var mapOptions = {
 			  center: myLatlng,
@@ -41,10 +41,10 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 	 /* Function For Get place from LatLng
 	 ==================================================*/
 	 function codeLatLng(lat, lng) {
-		/*    $scope.loading = $ionicLoading.show({
+		    $scope.loading = $ionicLoading.show({
           content: 'Getting current location...',
           showBackdrop: false
-        });*/
+        });
 		geocoder = new google.maps.Geocoder();
 		
 		var latlng = new google.maps.LatLng(lat, lng);
@@ -52,7 +52,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 		  if (status == google.maps.GeocoderStatus.OK) {
 		  // console.log(results)
 			if (results[1]) {
-				alert("Resultados geo"); 
+			
 				$scope.$apply(function(){
 					$scope.Location = results[0].formatted_address ;
 					$scope.start_box.location = results[0].formatted_address ;
@@ -62,14 +62,14 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 				$scope.current_box = angular.copy( $scope.start_box );
 				
 			} else {
-			  alert("No results found");
-			   $scope.Location = "You are here";
+			  //alert("No results found");
+			  // $scope.Location = "You are here";
 			  
 			}
 		  } else {
-			   $scope.Location = "You are here";
+			  // $scope.Location = "You are here";
 			  
-			alert("Geocoder failed due to: " + status);
+			//alert("Geocoder failed due to: " + status);
 		  }
 		});
 	  }
@@ -79,7 +79,8 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
           return;
         }
 			
-
+        
+		/**/
 		var contentString = "<div style='width: 200px'><a  ng-click='clickTest()'>{{Location}}</a></div>";
         var compiled = $compile(contentString)($scope);
 
@@ -89,17 +90,17 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
           content: compiled[0]
         });
 		
-
+		/**/
         navigator.geolocation.getCurrentPosition(function(pos) {
 			//console.log(pos);
 			
-			alert(JSON.stringify(pos));
-			var myLatlng	= new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+			//alert(JSON.stringify(pos));
+		   var myLatlng	= new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
 			
 			$scope.start_box.lat = pos.coords.latitude;
 			$scope.start_box.lng = pos.coords.longitude;
 			
-			// axe - aqui pongo el marcador en mi pos latlang 
+			
 			codeLatLng( pos.coords.latitude, pos.coords.longitude );
 			
 			var marker = new google.maps.Marker({
@@ -213,7 +214,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 	 
 	 
 	 // alert( $scope.user_data.Name )
-	 $scope.Location= 'Estas Aqui';
+	 $scope.Location= 'You are here';
 	 $scope.start_box = { 'location' : null, 'lat': null, 'lng' : null };
 	 $scope.end_box = {  'location' : null, 'lat': null, 'lng' : null };
 	 $scope.start_box_copy, $scope.end_box_copy ,current_box = {}
@@ -357,7 +358,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 				 promise.then(function(data){  
 					 
 					 $ionicLoading.hide();
-					 alert(JSON.stringify(data,null,4));
+					 //alert(JSON.stringify(data,null,4));
 					 
 					 if( data.cabs.length == 0 ){
 						alert('no cabs')

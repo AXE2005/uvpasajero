@@ -6,9 +6,9 @@ var wordpress = false;
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
  
-document.addEventListener("deviceready", onDeviceReady2, false);
+document.addEventListener("deviceready", onDeviceReady, false);
  
-function onDeviceReady2() {
+function onDeviceReady() {
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
 }
@@ -48,8 +48,6 @@ function onCapturePhoto(fileURI) {
 }
  
 function capturePhoto() {
-    pictureSource = navigator.camera.PictureSourceType;
-    destinationType = navigator.camera.DestinationType;	
     navigator.camera.getPicture(onCapturePhoto, onFail, {
         quality: 100,
         destinationType: destinationType.FILE_URI
