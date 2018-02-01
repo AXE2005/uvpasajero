@@ -282,6 +282,16 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		 });
 		
 	}
+	
+	$scope.load_perim = function(){
+		var ctaLayer = new google.maps.KmlLayer({
+		url: 'perim.kml' // Set the KML file
+		});
+
+		// attach the layer to the map
+		ctaLayer.setMap(map);	
+	}
+	
 	$scope.load_card_rate = function(){
 		
 		 WebService.show_loading();	
