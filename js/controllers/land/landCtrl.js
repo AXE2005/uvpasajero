@@ -29,14 +29,15 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			
 			 map.mapTypes.set('map_style', styledMap);
 			 map.setMapTypeId('map_style');
+			 
+			var ctaLayer = new google.maps.KmlLayer({
+			  url: 'http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml',
+			  map: map
+			});			 
         
 			var trafficLayer = new google.maps.TrafficLayer();
 			trafficLayer.setMap(map);			
 			
-			var ctaLayer = new google.maps.KmlLayer({
-			url: 'templates/perim.kml' 
-			});
-			ctaLayer.setMap(map);
 			
 			$scope.map = map;
 			
