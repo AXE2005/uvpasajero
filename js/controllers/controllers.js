@@ -289,7 +289,8 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		//  url: 'http://173.230.140.74/perim.kml',
 		//  map: $rootScope.map
 		//});			
-		alert($rootScope.asd);
+		//alert($rootScope.asd);
+		alert('wtf men');
 		
 		//navigator.geolocation.getCurrentPosition(function(pos) {
 		//	alert(JSON.stringify(pos));
