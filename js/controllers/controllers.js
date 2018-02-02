@@ -285,12 +285,21 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 	
 	$scope.load_perim = function(){
 		
-		//var ctaLayer = new google.maps.KmlLayer({
-		//  url: 'http://173.230.140.74/perim.kml',
-		//  map: $rootScope.map
-		//});			
+		WebService.show_loading();	
+
+		var ctaLayerx = new google.maps.KmlLayer({
+		  url: 'http://173.230.140.74/perim.kml',
+		  map: $rootScope.mapa
+		});			
+		
+		$timeout(function(){
+				$ionicLoading.hide();
+				$state.go('main-landing', {}, {reload: true}); 
+
+		}, 2000);		
+
 		//alert($rootScope.asd);
-		alert('wtf men');
+		//alert('wtf men');
 		
 		//navigator.geolocation.getCurrentPosition(function(pos) {
 		//	alert(JSON.stringify(pos));

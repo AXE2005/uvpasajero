@@ -36,7 +36,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			
 			
 			$scope.map = map;
-			$rootScope.asd = 'ola q axe';
+			$rootScope.mapa = map;
 			
 			$scope.init_status = true;
 		
