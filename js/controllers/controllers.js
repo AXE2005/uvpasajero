@@ -285,10 +285,11 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 	
 	$scope.load_perim = function(){
 		
-		var ctaLayer = new google.maps.KmlLayer({
-		  url: 'http://173.230.140.74/perim.kml',
-		  map: $rootScope.map
-		});			
+		//var ctaLayer = new google.maps.KmlLayer({
+		//  url: 'http://173.230.140.74/perim.kml',
+		//  map: $rootScope.map
+		//});			
+		alert($rootScope.asd);
 		
 		//navigator.geolocation.getCurrentPosition(function(pos) {
 		//	alert(JSON.stringify(pos));

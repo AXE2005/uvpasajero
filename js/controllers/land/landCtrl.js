@@ -5,10 +5,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 	$ionicLoading.hide();
 	/* Funtion For set Map
 	=========================================================== */
-	
-	function olaqaxe(){
-		alert('ola q axes');
-	}
+
 	
 	function set_map() {
 	    // Create an array of styles.
@@ -39,7 +36,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			
 			
 			$scope.map = map;
-			$rootScope.map = 'ola q axe';
+			$rootScope.asd = 'ola q axe';
 			
 			$scope.init_status = true;
 		
