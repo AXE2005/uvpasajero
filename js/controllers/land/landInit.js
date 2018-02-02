@@ -4,10 +4,12 @@ App.factory("landInit", function ($rootScope) {
         
         mapStyles: function () {
 			
+			var style = [];
+			
 			var hoursx = new Date().getHours()
-			if (hoursx > 6) {
+			if (hoursx > 6 && hoursx < 20) {
 				
-			var style = [
+			style = [
 			{
 			"featureType": "all",
 			"elementType": "geometry.fill",
@@ -216,7 +218,7 @@ App.factory("landInit", function ($rootScope) {
 				
 			}else{
 				
-			var style = [
+			style = [
 			
 			{
 						"featureType": "all",

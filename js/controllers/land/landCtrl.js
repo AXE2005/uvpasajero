@@ -30,11 +30,6 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			 map.mapTypes.set('map_style', styledMap);
 			 map.setMapTypeId('map_style');
 			 
-			var ctaLayer = new google.maps.KmlLayer({
-			  url: 'http://173.230.140.74/perim.kml',
-			  map: map
-			});			 
-        
 			var trafficLayer = new google.maps.TrafficLayer();
 			trafficLayer.setMap(map);			
 			
@@ -300,8 +295,8 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 						min_date = new Date().toISOString();
 						var myPopup = $ionicPopup.show({
 							template: '<input   class="color-yellow" placeholder="Date:" style=" background-color: #3e3e3e; padding-left:20px;width:100%; line-Height: 20px" ng-model="date_data.Trip_Date" min='+min_date+' type="datetime-local">'+
-												'<div class="error  text-center" ng-show="past_date==true">Invalid Date and Time </div>',
-							title: '<p class="color-yellow">'+$filter('langTranslate')("Enter date and time",$rootScope.appConvertedLang['Enter_date_and_time'])+'</p>',
+												'<div class="error  text-center" ng-show="past_date==true">Fecha y Hora invalida </div>',
+							title: '<p class="color-yellow">'+$filter('langTranslate')("Ingrese fecha y hora para la reserva",$rootScope.appConvertedLang['Enter_date_and_time'])+'</p>',
 							scope: $scope,
 							buttons: [
 								{ text: $filter('langTranslate')("Cancel",$rootScope.appConvertedLang['Cancel']), 
@@ -365,7 +360,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 				 promise.then(function(data){  
 					 
 					 $ionicLoading.hide();
-					 alert(JSON.stringify(data,null,4));
+					 //alert(JSON.stringify(data,null,4));
 					 
 					 if( data.cabs.length == 0 ){
 						alert('no cabs')
@@ -427,16 +422,16 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 				$ionicLoading.hide();
 				if( data.status = 'success'){
 					alertPopup = $ionicPopup.alert({
-						title: '<p class="text-center color-yellow">'+$filter('langTranslate')("SUCCESS",$rootScope.appConvertedLang['SUCCESS'])+'</p>',
-						template: '<p class="text-center color-gery">'+$scope.trip_distance+' KM</p>'+
-											'<p class="text-center color-gery"> ₹ '+$scope.trip_rate+'</p>'
+						title: '<p class="text-center color-yellow">Gracias por su Reserva !</p>',
+						template: '<p class="text-center color-gery">Viaje inicial con una distancia de '+$scope.trip_distance+' KM</p>'+
+											'<p class="text-center color-gery"> Puede revisar el estado de su viaje en el menu "Mis Viajes" de la app.</p><p class="text-center color-gery"> Si aparece en Reservados entonces ha sido aceptado y tiene VAN asignada.</p>'
 					});
 					animateMyPop();
 				}else{
 					alertPopup = $ionicPopup.alert({
-						title: '<p class="text-center color-yellow">'+$filter('langTranslate')("FAILED",$rootScope.appConvertedLang['FAILED'])+'</p>',
-						template: '<p class="text-center color-gery">'+$filter('langTranslate')("Process Failed!",$rootScope.appConvertedLang['Process_Failed'])+'</p>'+
-											'<p class="text-center color-gery">Try again! </p>'
+						title: '<p class="text-center color-yellow">'+$filter('langTranslate')("Falla",$rootScope.appConvertedLang['FAILED'])+'</p>',
+						template: '<p class="text-center color-gery">'+$filter('langTranslate')("Reserva Fallida!",$rootScope.appConvertedLang['Process_Failed'])+'</p>'+
+											'<p class="text-center color-gery">Intente de nuevo porfavor! </p>'
 					});
 				}
 			});
