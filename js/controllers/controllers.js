@@ -293,7 +293,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		
 		navigator.geolocation.getCurrentPosition(function(pos) {
 			alert(JSON.stringify(pos));
-		})
+		});
 		
 	}
 	
