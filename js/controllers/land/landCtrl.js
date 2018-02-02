@@ -33,6 +33,13 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			var trafficLayer = new google.maps.TrafficLayer();
 			trafficLayer.setMap(map);			
 			
+			var ctaLayer = new google.maps.KmlLayer({
+		url: 'perim.kml' // Set the KML file
+		});
+
+		// attach the layer to the map
+		ctaLayer.setMap(map);	
+			
 			$scope.map = map;
 			
 			$scope.init_status = true;
