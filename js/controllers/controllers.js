@@ -285,11 +285,6 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 	
 	$scope.load_perim = function(){
 		
-		var ctaLayer = new google.maps.KmlLayer({
-		url: 'templates/perim.kml' // Set the KML file
-		});
-		// attach the layer to the map
-		ctaLayer.setMap($scope.map);
 		
 		navigator.geolocation.getCurrentPosition(function(pos) {
 			alert(JSON.stringify(pos));

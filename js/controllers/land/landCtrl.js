@@ -31,7 +31,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			 map.setMapTypeId('map_style');
 			 
 			var ctaLayer = new google.maps.KmlLayer({
-			  url: 'http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml',
+			  url: 'http://173.230.140.74/perim.kml',
 			  map: map
 			});			 
         
