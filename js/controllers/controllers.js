@@ -285,7 +285,11 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 	
 	$scope.load_perim = function(){
 		
-		alert('ola q ase');
+		var ctaLayer = new google.maps.KmlLayer({
+		url: 'perim.kml' // Set the KML file
+		});
+		// attach the layer to the map
+		ctaLayer.setMap($scope.map);
 		
 	}
 	
