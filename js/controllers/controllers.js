@@ -287,7 +287,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		
 		var ctaLayer = new google.maps.KmlLayer({
 		  url: 'http://173.230.140.74/perim.kml',
-		  map: $scope.map
+		  map: $rootScope.map
 		});			
 		
 		//navigator.geolocation.getCurrentPosition(function(pos) {

@@ -35,6 +35,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			
 			
 			$scope.map = map;
+			$rootScope.map = map;
 			
 			$scope.init_status = true;
 		
