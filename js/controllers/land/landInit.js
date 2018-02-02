@@ -5,7 +5,7 @@ App.factory("landInit", function ($rootScope) {
         mapStyles: function () {
 			
 			var hoursx = new Date().getHours()
-			if (hoursx < 6 && hoursx > 20) {
+			if (hoursx > 6 && hours < 22) {
 				
 			var style = [
 			{
