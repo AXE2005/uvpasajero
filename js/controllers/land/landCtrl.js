@@ -98,7 +98,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
         navigator.geolocation.getCurrentPosition(function(pos) {
 			//console.log(pos);
 			
-			alert(JSON.stringify(pos));
+			//alert(JSON.stringify(pos));
 			var myLatlng	= new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
 			
 			$scope.start_box.lat = pos.coords.latitude;
@@ -365,7 +365,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 					 //alert(JSON.stringify(data,null,4));
 					 
 					 if( data.cabs.length == 0 ){
-						alert('no cabs')
+						alert('No hay vehiculos disponibles')
 					 }else{
 						 
 							$scope.cabs = data.cabs;
@@ -426,7 +426,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 					alertPopup = $ionicPopup.alert({
 						title: '<p class="text-center color-yellow">Gracias por su Reserva !</p>',
 						template: '<p class="text-center color-gery">Viaje inicial con una distancia de '+$scope.trip_distance+' KM</p>'+
-											'<p class="text-center color-gery"> Puede revisar el estado de su viaje en el menu "Mis Viajes" de la app.</p><p class="text-center color-gery"> Si aparece en Reservados entonces ha sido aceptado y tiene VAN asignada.</p>'
+											'<p class="text-center color-gery"> Puede revisar el estado de su viaje en el menu "Mis Viajes" de la app.</p><p class="text-center color-gery"> Si aparece en Reservados entonces ha sido aceptado y tiene vehiculo asignada.</p>'
 					});
 					animateMyPop();
 				}else{
@@ -451,6 +451,13 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 			 $scope.selected_cab = $scope.cabs[index];
 			 
 		 }
+		 
+		$scope.clicked_precio = function(index){
+			$window.alert(index); 
+			$scope.tarifa_actual = index;
+			animate_tab();
+
+		}		 
 	   
 		$scope.disableTapTo = function(){
 			container = document.getElementsByClassName('pac-container');

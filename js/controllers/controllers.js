@@ -283,6 +283,32 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		
 	}
 	
+	$scope.load_driver = function(index){
+		
+		alert(index);
+		
+		$rootScope.user_data = JSON.parse( localStorage.getItem('user_data') );		
+		
+		$rootScope.myTrip_menu_selected = 0;
+		 var link = 'load_driver';
+		 var post_data = {  
+							'id'    : $index,
+							'token'    		 : $rootScope.user_data.token,
+						 }
+		
+		 WebService.show_loading();	
+		 
+		 var promise = WebService.send_data( link,post_data);
+		 
+		 promise.then(function(data){  
+			 $rootScope.Driver = data;
+			 //serv.set_trip_tab();	
+			 
+			 $ionicLoading.hide();
+		 });
+		
+	}	
+	
 	$scope.load_perim = function(){
 		
 		WebService.show_loading();	
@@ -352,7 +378,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		
       $cordovaOauth.google("961941792261-65dbtr9khlc6auv8u9n78icmjtvbpj9h.apps.googleusercontent.com", ["https://www.googleapis.com/auth/urlshortener", "https://www.googleapis.com/auth/userinfo.email"]).then(function (result) {
         // $scope.oauthResult = result;
-				alert(JSON.stringify( result ,null,4))
+				//alert(JSON.stringify( result ,null,4))
       }, function (error) {
         $scope.oauthResult = "OAUTH ERROR (see console)";
         console.log(error);

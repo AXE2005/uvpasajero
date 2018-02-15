@@ -39,16 +39,16 @@
 				</div>
 				
 			</div>
-	<p class='text-center color-yellow bg-light p-head no-margin'>{{ 'VEHICLE DETAILS' | langTranslate: appConvertedLang['VEHICLE_DETAILS'] }}</p>
+	<p class='text-center color-yellow bg-light p-head no-margin'>DETALLES VEHICULO</p>
 			
 			<div class="row no-padding b-border-light">
 						<div class="col  r-border-light p-10 text-center" >
-							<p class='color-white p-head '>{{ 'CAB TYPE' | langTranslate: appConvertedLang['CAB_TYPE'] }}</p>
+							<p class='color-white p-head '>CAPACIDAD</p>
 							<p class='color-gery'>{{details.taxi_type}}</p>
 						</div>
 						<div class="col  p-10 text-center" >
 							<p class='color-white p-head '>{{ 'DRIVER DETAILS' | langTranslate: appConvertedLang['DRIVER_DETAILS'] }}</p>
-							<p class='color-gery'>{{details.driver}}</p>
+							<p class='color-gery'>{{details.assigned_for}}{{$rootScope.Driver.name}}{{$rootScope.Driver.phone}}{{$rootScope.Driver.car_no}}</p>
 						</div>
 			</div>
 			
