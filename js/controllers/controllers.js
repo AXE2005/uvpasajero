@@ -285,11 +285,10 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 	
 	$rootScope.load_driver = function(index){
 		
-		//alert(index);
+		alert(index);
 		
 		$rootScope.user_data = JSON.parse( localStorage.getItem('user_data') );		
 		
-		$rootScope.myTrip_menu_selected = 0;
 		 var link = 'load_driver';
 		 var post_data = {  
 							'id'    : index,
@@ -303,6 +302,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		 promise.then(function(data){  
 			 $rootScope.Driver = data;
 			 //serv.set_trip_tab();	
+			 alert($rootScope.Driver.name);
 			 
 			 $ionicLoading.hide();
 		 });
@@ -310,7 +310,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 	}	
 	
 	$scope.load_perim = function(){
-		
+		 alert($rootScope.Driver.name);
 		WebService.show_loading();	
 
 		var ctaLayerx = new google.maps.KmlLayer({
