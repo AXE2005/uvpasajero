@@ -303,7 +303,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 			 $ionicLoading.hide();
 			 $rootScope.Driver = data;
 			 //serv.set_trip_tab();	
-			 alert($rootScope.Driver.name);
+			 //alert($rootScope.Driver.name);
 			 
 			 
 		 });

@@ -48,9 +48,9 @@
 						</div>
 						<div class="col  p-10 text-center" >
 							<p class='color-white p-head '>{{ 'DRIVER DETAILS' | langTranslate: appConvertedLang['DRIVER_DETAILS'] }}</p>
-							<p class='color-gery'>Nombre: {{$rootScope.Driver.name}}</p>
-							<p class='color-gery'>Celular: {{$rootScope.Driver.phone}}</p>
-							<p class='color-gery'>Placa: {{$rootScope.Driver.car_no}}</p>
+							<p class='color-gery'>Nombre: {{Driver.name}}</p>
+							<p class='color-gery'>Celular: {{Driver.phone}}</p>
+							<p class='color-gery'>Placa: {{Driver.car_no}}</p>
 						</div>
 			</div>
 			
@@ -68,10 +68,10 @@
 				</div>
 				<div class="row p-top-5 b-border-light">
 						<div class="col  p-10 col-center" >
-							<p class='color-gery no-margin'>No Max de Puestos</p>
+							<p class='color-gery no-margin'>Estado del Servicio</p>
 						</div>
 						<div class="col   p-10 text-center col-center" >
-							<p class='pull-right'> <span class='color-gery'>{{details.taxi_type}}</span></p>
+							<p class='pull-right'> <span class='color-gery'>{{details.status}}</span></p>
 						</div>
 				</div>
 			
