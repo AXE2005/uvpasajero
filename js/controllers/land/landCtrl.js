@@ -453,37 +453,43 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 		 }
 		 
 		$scope.clicked_precio = function(index){
-			//$window.alert(index);
+			$window.alert(index);
+			
 			$scope.tarifa_actual = 0;
-			if (index = 'aerotray') {
-				$scope.tarifa_actual = $scope.selected_cab.aerotray;
-			}
-			if (index = 'aeroreco') {
-				$scope.tarifa_actual = $scope.selected_cab.aeroreco;
-			}
-			if (index = 'disp8') {
-				$scope.tarifa_actual = $scope.selected_cab.disp8;
-			}
-			if (index = 'disp12') {
-				$scope.tarifa_actual = $scope.selected_cab.disp12;
-			}
-			if (index = 'disp24') {
-				$scope.tarifa_actual = $scope.selected_cab.disp24;
-			}
-			if (index = 'achiag') {
-				$scope.tarifa_actual = $scope.selected_cab.achiag;
-			}
-			if (index = 'achian') {
-				$scope.tarifa_actual = $scope.selected_cab.achian;
-			}
-			if (index = 'citytour') {
-				$scope.tarifa_actual = $scope.selected_cab.citytour;
-			}
-			if (index = 'sabana') {
-				$scope.tarifa_actual = $scope.selected_cab.sabana;
+			
+			
+			switch (index) {
+				case 0:
+					$scope.tarifa_actual = $scope.selected_cab.aerotray;
+					break;
+				case 1:
+					$scope.tarifa_actual = $scope.selected_cab.aeroreco;
+					break;
+				case 2:
+					$scope.tarifa_actual = $scope.selected_cab.disp8;
+					break;
+				case 3:
+					$scope.tarifa_actual = $scope.selected_cab.disp12;
+					break;
+				case 4:
+					$scope.tarifa_actual = $scope.selected_cab.disp24;
+					break;
+				case 5:
+					$scope.tarifa_actual = $scope.selected_cab.achiag;
+					break;
+				case 6:
+					$scope.tarifa_actual = $scope.selected_cab.achian;
+					break;
+				case 7:
+					$scope.tarifa_actual = $scope.selected_cab.citytour;
+					break;					
+				case 8:
+					$scope.tarifa_actual = $scope.selected_cab.sabana;
+					break;
+				default: 
+					$scope.tarifa_actual = 0;	
 			}			
 
-			animate_tab();
 
 		}		 
 	   

@@ -292,7 +292,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		$rootScope.myTrip_menu_selected = 0;
 		 var link = 'load_driver';
 		 var post_data = {  
-							'id'    : $index,
+							'id'    : index,
 							'token'    		 : $rootScope.user_data.token,
 						 }
 		
