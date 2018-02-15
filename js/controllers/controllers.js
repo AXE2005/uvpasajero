@@ -283,9 +283,9 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		
 	}
 	
-	$scope.load_driver = function(index){
+	$rootScope.load_driver = function(index){
 		
-		alert(index);
+		//alert(index);
 		
 		$rootScope.user_data = JSON.parse( localStorage.getItem('user_data') );		
 		

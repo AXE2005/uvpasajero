@@ -453,8 +453,36 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 		 }
 		 
 		$scope.clicked_precio = function(index){
-			$window.alert(index); 
-			$scope.tarifa_actual = index;
+			//$window.alert(index);
+			$scope.tarifa_actual = 0;
+			if (index = 'aerotray') {
+				$scope.tarifa_actual = $scope.selected_cab.aerotray;
+			}
+			if (index = 'aeroreco') {
+				$scope.tarifa_actual = $scope.selected_cab.aeroreco;
+			}
+			if (index = 'disp8') {
+				$scope.tarifa_actual = $scope.selected_cab.disp8;
+			}
+			if (index = 'disp12') {
+				$scope.tarifa_actual = $scope.selected_cab.disp12;
+			}
+			if (index = 'disp24') {
+				$scope.tarifa_actual = $scope.selected_cab.disp24;
+			}
+			if (index = 'achiag') {
+				$scope.tarifa_actual = $scope.selected_cab.achiag;
+			}
+			if (index = 'achian') {
+				$scope.tarifa_actual = $scope.selected_cab.achian;
+			}
+			if (index = 'citytour') {
+				$scope.tarifa_actual = $scope.selected_cab.citytour;
+			}
+			if (index = 'sabana') {
+				$scope.tarifa_actual = $scope.selected_cab.sabana;
+			}			
+
 			animate_tab();
 
 		}		 
