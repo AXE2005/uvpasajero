@@ -84,7 +84,7 @@
 					 
 					$http(req).then( 
 						function (data){
-							 //alert(JSON.stringify(data.data));
+							 alert(JSON.stringify(data.data));
 							deferred.resolve(data.data);		
 						},function (error){
 							

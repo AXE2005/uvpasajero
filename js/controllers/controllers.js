@@ -285,7 +285,6 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 	
 	$rootScope.load_driver = function(index){
 		
-		alert(index);
 		
 		$rootScope.user_data = JSON.parse( localStorage.getItem('user_data') );		
 		
@@ -299,12 +298,14 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		 
 		 var promise = WebService.send_data( link,post_data);
 		 
-		 promise.then(function(data){  
+		 promise.then(function(data){
+			 data = data[0];
+			 $ionicLoading.hide();
 			 $rootScope.Driver = data;
 			 //serv.set_trip_tab();	
 			 alert($rootScope.Driver.name);
 			 
-			 $ionicLoading.hide();
+			 
 		 });
 		
 	}	
