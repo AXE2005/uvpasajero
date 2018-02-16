@@ -28,6 +28,13 @@
 					</br>
 					
 					<div class='input-box'>
+						
+						<input name='empresa' ng-model='signUp.empresa' placeholder="Empresa Afiliada" class='color-yellow' type='text'/>
+						<img class='input-icon icon-20' src='img/icons/user.png'/>
+					</div>
+					</br>					
+					
+					<div class='input-box'>
 						<div class="error-container " ng-show="sign_up_form.user_name.$dirty && sign_up_form.user_name.$invalid" >
 							<small class="error	 " ng-show="sign_up_form.user_name.$error.required">{{ 'Enter user name' | langTranslate: appConvertedLang['Enter_user_name'] }}</small>
 							<small class="error	 " ng-show="sign_up_form.user_name.$error.minlength">{{ 'Minimum 6 characters' | langTranslate: appConvertedLang['Minimum_6_characters'] }}</small>
@@ -61,7 +68,7 @@
 							<small class="error	 " ng-show="sign_up_form.number.$error.maxlength">Ingresa un n&uacute;mero v&aacute;lido</small>								
 						</div>
 						
-						<input name='number' placeholder="Edad" ng-model='signUp.Edad' type='number' class='color-yellow' type='text' ng-minlength="2" ng-maxlength="2" required />
+						<input name='edad' placeholder="Edad" ng-model='signUp.edad' type='number' class='color-yellow' type='text' ng-minlength="2" ng-maxlength="2" required />
 						<img class='input-icon icon-20' src='img/icons/user.png'/>
 						
 					</div>					
@@ -83,7 +90,7 @@
 							<small class="error	 " ng-show="sign_up_form.pwd.$error.required">{{ 'Enter Password' | langTranslate: appConvertedLang['Enter_Password'] }}</small>
 							<small class="error	 " ng-show="sign_up_form.pwd.$error.minlength">{{ 'Minimum 6 characters' | langTranslate: appConvertedLang['Minimum_6_characters'] }}</small>								
 						</div>
-						<input name='pwd' ng-model='signUp.pwd' placeholder="{{ 'password' | langTranslate: appConvertedLang['password'] }}" class='color-yellow' ng-minlength='6' type='password' required/>
+						<input name='pwd' ng-model='signUp.pwd' placeholder="Contrase&ntilde;a" class='color-yellow' ng-minlength='6' type='password' required/>
 						<img class='input-icon icon-20' src='img/icons/lock.png'/>
 					</div>
 					</br>
@@ -96,6 +103,10 @@
 						<input name='c_pwd' ng-model='signUp.c_pwd' placeholder="{{ 'Confirm password' | langTranslate: appConvertedLang['Conform_password'] }}" class='color-yellow' type='password' required/>
 						<img class='input-icon icon-20' src='img/icons/lockTick.png'/>
 					</div>
+					
+					<div class='head'>
+						<span > Debe ingresar un documento de identificaci&oacute;n preferiblemente coorporativo para validar manualmente su acceso a la aplicaci&oacute;n </span>
+					</div>					
 					
 					<input ng-click='getImage()'  class='btn bg-black color-white big-font m-top-20' type='button' value="Seleccionar Foto ID de la Biblioteca" /> 
 					

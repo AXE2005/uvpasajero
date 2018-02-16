@@ -183,8 +183,8 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		options.mimeType = "image/jpeg";
 		//console.log(options.fileName);
 		var params = new Object();
-		params.value1 = "test";
-		params.value2 = "param";
+		params.user = $scope.signUp.user_name;
+		params.mail = $scope.signUp.mail;
 		options.params = params;
 		options.chunkedMode = false;
 
@@ -220,6 +220,8 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 								'Mobile'    : $scope.signUp.mobile ,
 								'User_name' : $scope.signUp.user_name ,
 								'Name'			: $scope.signUp.name,
+								'Edad'			: $scope.signUp.edad,
+								'Empresa'		: $scope.signUp.empresa,
 							 }
 		
 		/*		
