@@ -54,6 +54,20 @@
 					</br>
 					
 					<div class='input-box'>
+						<div class="error-container " ng-show="sign_up_form.number.$dirty && sign_up_form.number.$invalid" >
+							<small class="error	 " ng-show="sign_up_form.number.$error.required">Ingresa tu edad</small>
+							<small class="error	 " ng-show="sign_up_form.number.$error.number">Ingresa un n&uacute;mero v&aacute;lido</small>								
+							<small class="error	 " ng-show="sign_up_form.number.$error.minlength">Ingresa un n&uacute;mero v&aacute;lido</small>								
+							<small class="error	 " ng-show="sign_up_form.number.$error.maxlength">Ingresa un n&uacute;mero v&aacute;lido</small>								
+						</div>
+						
+						<input name='number' placeholder="Edad" ng-model='signUp.Edad' type='number' class='color-yellow' type='text' ng-minlength="2" ng-maxlength="2" required />
+						<img class='input-icon icon-20' src='img/icons/user.png'/>
+						
+					</div>					
+					</br>
+					
+					<div class='input-box'>
 						<div class="error-container " ng-show="sign_up_form.mail.$dirty && sign_up_form.mail.$invalid" >
 							<small class="error	 " ng-show="sign_up_form.mail.$error.required">{{ 'Enter email' | langTranslate: appConvertedLang['Enter_email'] }}</small>
 							<small class="error	 " ng-show="sign_up_form.mail.$error.email">{{ 'Enter valid email' | langTranslate: appConvertedLang['Enter_valid_email'] }}</small>								
@@ -83,7 +97,11 @@
 						<img class='input-icon icon-20' src='img/icons/lockTick.png'/>
 					</div>
 					
-					<input onclick='capturePhoto()' ng-click='capturePhoto()'  class='btn bg-yellow color-white big-font m-top-20' type='button' value="Tomar FOTO de ID" /> 
+					<input ng-click='getImage()'  class='btn bg-black color-white big-font m-top-20' type='button' value="Seleccionar Foto ID de la Biblioteca" /> 
+					
+					</br>
+					
+					<input ng-click='tomaImage()'  class='btn bg-black color-white big-font m-top-20' type='button' value="Tomar Foto de ID o NIT" /> 
 					
 					</br>
 					

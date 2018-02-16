@@ -154,6 +154,51 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
   
 	};
   
+  
+  
+	$scope.getImage = function() {
+		navigator.camera.getPicture($scope.uploadPhoto, function(message) {
+		alert('No se ha podido acceder a la biblioteca de tu dispositivo');
+		}, {
+		quality: 100,
+		destinationType: navigator.camera.DestinationType.FILE_URI,
+		sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+		});
+	}
+	
+	$scope.tomaImage = function() {
+		navigator.camera.getPicture($scope.uploadPhoto, function(message) {
+		alert('No se ha podido acceder a la biblioteca de tu dispositivo');
+		}, {
+		quality: 100,
+		destinationType: navigator.camera.DestinationType.FILE_URI,
+		sourceType: navigator.camera.PictureSourceType.CAMERA
+		});
+	}	
+
+	$scope.uploadPhoto = function (imageURI) {
+		var options = new FileUploadOptions();
+		options.fileKey = "file";
+		options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+		options.mimeType = "image/jpeg";
+		//console.log(options.fileName);
+		var params = new Object();
+		params.value1 = "test";
+		params.value2 = "param";
+		options.params = params;
+		options.chunkedMode = false;
+
+		var ft = new FileTransfer();
+		ft.upload(imageURI, "http://173.230.140.74/upload.php", function(result){
+		console.log(JSON.stringify(result));
+		}, function(error){
+		console.log(JSON.stringify(error));
+		}, options);
+	}
+  
+  
+  
+  
 	$scope.signUp = {};
 	$scope.do_signUp = function( form ) {
 		//$state.go('view', {movieid: 1});
