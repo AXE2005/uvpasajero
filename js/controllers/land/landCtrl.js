@@ -453,7 +453,7 @@ App.controller('landCtrl', function($scope,$rootScope,$q, $ionicLoading, $compil
 		 }
 		 
 		$scope.clicked_precio = function(index){
-			$window.alert(index);
+			//$window.alert(index);
 			
 			$scope.tarifa_actual = 0;
 			
