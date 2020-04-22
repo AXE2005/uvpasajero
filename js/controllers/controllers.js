@@ -358,17 +358,18 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 	}	
 	
 	$scope.load_perim = function(){
-		 alert($rootScope.Driver.name);
+		//alert($rootScope.Driver.name);
 		WebService.show_loading();	
 
-		var ctaLayerx = new google.maps.KmlLayer({
-		  url: 'http://173.230.140.74/perim.kml',
-		  map: $rootScope.mapa
-		});			
+		var kmlUrl = 'http://186.119.121.154:5000/perim.kml';
+
+ 		var KML_single = new google.maps.KmlLayer(kmlUrl, {color:"#4385F1" } );
+
+ 		KML_single.setMap($rootScope.mapa);		
 		
 		$timeout(function(){
 				$ionicLoading.hide();
-				$state.go('main-landing', {}, {reload: true}); 
+				$state.go('app.landing', {}, {reload: true});
 
 		}, 2000);		
 
