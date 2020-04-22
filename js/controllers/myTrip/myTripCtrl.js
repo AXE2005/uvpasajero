@@ -39,7 +39,6 @@ App.controller('myTripCtrl', function($scope,$rootScope, $ionicLoading, $compile
 	
 	$scope.show_details = function( index ){
 		$rootScope.details = $rootScope.active_trip[index];
-		$rootScope.load_driver($rootScope.details.assigned_for);
 		
 	}
 

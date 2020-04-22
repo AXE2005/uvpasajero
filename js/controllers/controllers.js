@@ -154,51 +154,6 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
   
 	};
   
-  
-  
-	$scope.getImage = function() {
-		navigator.camera.getPicture($scope.uploadPhoto, function(message) {
-		alert('No se ha podido acceder a la biblioteca de tu dispositivo');
-		}, {
-		quality: 100,
-		destinationType: navigator.camera.DestinationType.FILE_URI,
-		sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-		});
-	}
-	
-	$scope.tomaImage = function() {
-		navigator.camera.getPicture($scope.uploadPhoto, function(message) {
-		alert('No se ha podido acceder a la biblioteca de tu dispositivo');
-		}, {
-		quality: 100,
-		destinationType: navigator.camera.DestinationType.FILE_URI,
-		sourceType: navigator.camera.PictureSourceType.CAMERA
-		});
-	}	
-
-	$scope.uploadPhoto = function (imageURI) {
-		var options = new FileUploadOptions();
-		options.fileKey = "file";
-		options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
-		options.mimeType = "image/jpeg";
-		//console.log(options.fileName);
-		var params = new Object();
-		params.user = $scope.signUp.user_name;
-		params.mail = $scope.signUp.mail;
-		options.params = params;
-		options.chunkedMode = false;
-
-		var ft = new FileTransfer();
-		ft.upload(imageURI, "http://173.230.140.74/upload.php", function(result){
-		console.log(JSON.stringify(result));
-		}, function(error){
-		console.log(JSON.stringify(error));
-		}, options);
-	}
-  
-  
-  
-  
 	$scope.signUp = {};
 	$scope.do_signUp = function( form ) {
 		//$state.go('view', {movieid: 1});
@@ -220,8 +175,6 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 								'Mobile'    : $scope.signUp.mobile ,
 								'User_name' : $scope.signUp.user_name ,
 								'Name'			: $scope.signUp.name,
-								'Edad'			: $scope.signUp.edad,
-								'Empresa'		: $scope.signUp.empresa,
 							 }
 		
 		/*		
@@ -330,55 +283,12 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		
 	}
 	
-	$rootScope.load_driver = function(index){
-		
-		
-		$rootScope.user_data = JSON.parse( localStorage.getItem('user_data') );		
-		
-		 var link = 'load_driver';
-		 var post_data = {  
-							'id'    : index,
-							'token'    		 : $rootScope.user_data.token,
-						 }
-		
-		 WebService.show_loading();	
-		 
-		 var promise = WebService.send_data( link,post_data);
-		 
-		 promise.then(function(data){
-			 data = data[0];
-			 $ionicLoading.hide();
-			 $rootScope.Driver = data;
-			 //serv.set_trip_tab();	
-			 //alert($rootScope.Driver.name);
-			 
-			 
-		 });
-		
-	}	
-	
 	$scope.load_perim = function(){
-		//alert($rootScope.Driver.name);
-		WebService.show_loading();	
-
-		var kmlUrl = 'http://186.119.121.154:5000/perim.kml';
-
- 		var KML_single = new google.maps.KmlLayer(kmlUrl, {color:"#4385F1" } );
-
- 		KML_single.setMap($rootScope.mapa);		
 		
-		$timeout(function(){
-				$ionicLoading.hide();
-				$state.go('app.landing', {}, {reload: true});
-
-		}, 2000);		
-
-		//alert($rootScope.asd);
-		//alert('wtf men');
 		
-		//navigator.geolocation.getCurrentPosition(function(pos) {
-		//	alert(JSON.stringify(pos));
-		//});
+		navigator.geolocation.getCurrentPosition(function(pos) {
+			alert(JSON.stringify(pos));
+		});
 		
 	}
 	
@@ -427,7 +337,7 @@ App.controller('AppCtrl', function($scope,$rootScope,$cordovaNetwork, $ionicModa
 		
       $cordovaOauth.google("961941792261-65dbtr9khlc6auv8u9n78icmjtvbpj9h.apps.googleusercontent.com", ["https://www.googleapis.com/auth/urlshortener", "https://www.googleapis.com/auth/userinfo.email"]).then(function (result) {
         // $scope.oauthResult = result;
-				//alert(JSON.stringify( result ,null,4))
+				alert(JSON.stringify( result ,null,4))
       }, function (error) {
         $scope.oauthResult = "OAUTH ERROR (see console)";
         console.log(error);

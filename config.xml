@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.wifienter.ultravans"
-        version   = "1.0.2">
+        id        = "com.techware.callMyCab"
+        version   = "1.0.1">
 
     <name>UltraVans</name>
 
     <description>
-        Version ALPHA - Sistema de Reserva de servicio de Transportes para la empresa UltraVans.
+        Sistema de Reserva de servicio de Transportes para la empresa UltraVans.
     </description>
 
     <author href="http://appsmarthotel.com/" email="alejandro.c@wifienter.net">
@@ -64,41 +65,12 @@
         <gap:plugin name="cordova-plugin-device" source="npm" spec="~1.1.3" />
         <gap:plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.4" />
         <gap:plugin name="cordova-plugin-dialogs" source="npm"  spec="~1.3.0" />
+        <gap:plugin name="cordova-plugin-file-transfer" source="npm"  spec="~1.6.0" />
         <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.5.0" />
         <gap:plugin name="cordova-plugin-network-information" source="npm"  spec="~1.3.0" />
         <gap:plugin name="cordova-plugin-splashscreen" source="npm" spec="~4.0.0" />
-		
-<plugin name="cordova-plugin-camera">
-   <param name="CAMERA_USAGE_DESCRIPTION" value="Para el lector de documento." />
-   <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Para el lector de documento." />
-</plugin>
-		<plugin name="cordova-plugin-compat" spec="1.2.0" />
-		<plugin name="cordova-plugin-file" spec="4.3.1" />
-		<plugin name="cordova-plugin-file-transfer" spec="1.6.1" />
-    <plugin name="cordova-plugin-media-capture"   spec="1.4.3" >
-      <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Para el lector de documento." />
-    </plugin>	
-		
-		<plugin name="cordova-plugin-whitelist" source="npm" />
-		
-		<config-file platform="ios" parent="NSPhotoLibraryUsageDescription" mode="replace">  
-		<string>Para el lector de documento.</string> 
-		</config-file>
-		
-	<platform name="ios">	
-		<edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge" overwrite="true">
-			<string>Para el lector de documento.</string>
-		</edit-config>
-		<edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge" overwrite="true">
-			<string>Para el lector de documento.</string>
-		</edit-config>
-		<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge" overwrite="true">
-			<string>Para el lector de documento.</string>
-		</edit-config>
-		<edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge" overwrite="true">
-			<string>Para el lector de documento.</string>
-		</edit-config>
-	</platform>
+		<gap:plugin name="cordova-plugin-camera" source="npm" />
+		<gap:plugin name="cordova-plugin-file" source="npm" />
 		
 		<!-- <gap:plugin name="cordova-plugin-whitelist" version="1.0.0"  /> -->
     <!-- Third party plugins -->
@@ -113,16 +85,15 @@
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
     <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
+    <icon src="res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
     <icon src="res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
     <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
     <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
     <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
-	<icon src="res/icon/ios/icon-120.png"         gap:platform="ios"        width="120" height="120" />
-	<icon src="res/icon/ios/icon-152.png"         gap:platform="ios"        width="152" height="152" />
-	<icon src="res/icon/ios/icon-76.png"         gap:platform="ios"        width="76" height="76" />
-	<icon src="res/icon/ios/icon-40-2x.png" platform="ios" width="80" height="80" />
-	<icon src="res/icon/ios/icon-40.png" platform="ios" width="40" height="40" />
-
+    <icon src="res/icon/webos/icon-64.png"          gap:platform="webos" />
+    <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
+    <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
 
     <!-- Define app splash screen for each platform. -->
 		<gap:splash src="res/screen/android/screen-ldpi-portrait.png" />
@@ -152,6 +123,8 @@
         <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
     -->
     <access origin="*"/>
+    <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
+    <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
     <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

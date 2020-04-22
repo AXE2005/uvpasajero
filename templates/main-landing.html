@@ -41,70 +41,79 @@
 				<div class='head-box text-center'>
 					<div class='vertical-middle'>
 						<span class='color-yellow d-block '>{{selected_cab.cartype}}</span>
-						<span class='color-gery d-block'>Elija el # de puestos que requiere</span>
+						<span class='color-gery d-block'>Elija el no de puestos que requiere</span>
 					</div>
 				</div>
 			
 				<div id='fare-breakup-box' class='text-center'>
 					<div class='head'>
-						<span >{{ 'Fare Breakup' | langTranslate: appConvertedLang['Fare_Breakup'] }} <b><span class='color-yellow f-size-20'>$ {{tarifa_actual}} </span> </b></span>
+						<span >{{ 'Fare Breakup' | langTranslate: appConvertedLang['Fare_Breakup'] }}</span>
 					</div>
 					<!-- {{end_box}} -->
 					<div class="row ">
 						<div class="item-rate col col-33">
-							<div class='vertical-middle' ng-click='clicked_precio(0)'>
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span> {{selected_cab.aerotray}}</b></p>
 								<p class='color-gery'>Aeropuerto</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33">
-							<div class='vertical-middle' ng-click='clicked_precio(1)'>
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.aeroreco}}</b></p>
 								<p class='color-gery'>Recepci&oacute;n Aerop</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33 no-border">
-							<div class='vertical-middle' ng-click='clicked_precio(2)'>
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp8}}</b></p>
 								<p class='color-gery'>Disponibilidad 8 Horas Bta</p>
 							</div>
 						</div>
 					</div>
 						
 					<div class="row ">
-						<div class="item-rate col col-33">
-							<div class='vertical-middle' ng-click='clicked_precio(3)'>
+						<div class="item-rate col col-33 no-border">
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp12}}</b></p>
 								<p class='color-gery'>Disponibilidad 12 Horas Bta</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33">
-							<div class='vertical-middle' ng-click='clicked_precio(4)'>
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp24}}</b></p>
 								<p class='color-gery'>Disponibilidad 24 Horas Bta</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33 no-border">
-							<div class='vertical-middle' ng-click='clicked_precio(5)'>
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.achiag}}</b></p>
 								<p class='color-gery'>Andres Ch&iacute;a x Guaymaral</p>
 							</div>
 						</div>
 					</div>
 					
 					<div class="row ">
-						<div class="item-rate col col-33">
-							<div class='vertical-middle' ng-click='clicked_precio(6)'>
+						<div class="item-rate col col-33 no-border">
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp12}}</b></p>
 								<p class='color-gery'>Andres Ch&iacute;a x autonorte</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33">
-							<div class='vertical-middle' ng-click='clicked_precio(7)'>
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.disp24}}</b></p>
 								<p class='color-gery'>CityTour</p>
 							</div>
 						</div>
 						<div class="item-rate col col-33 no-border">
-							<div class='vertical-middle' ng-click='clicked_precio(8)'>
+							<div class='vertical-middle'>
+								<p class='color-gery'><b><span class='color-yellow f-size-20'>$ </span>{{selected_cab.achiag}}</b></p>
 								<p class='color-gery'>Tour de La Sabana</p>
 							</div>
 						</div>
 					</div>	
 																												
-					<p class='color-gery f-size-12 p10'>Haga click en el plan para conocer la tar&iacute;fa <br> Más info y per&iacute;metro en el menu principal</p>
+					<p class='color-gery f-size-12 p10'>Más info y per&iacute;metro en el menu principal</p>
 				</div>
 				
 			</div>
@@ -126,7 +135,7 @@
     
 	<ion-footer-bar class="bg-dark" >
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == false'>
-			<div class='w-100-p pull-left my-button h-100-p text-center ' ng-click='ride("later")'>RESERVAR</div>
+			<div class='w-100-p pull-left my-button h-100-p text-center ' ng-click='ride("later")'>RESERVAR VAN</div>
 		</div> 
 		
 		<div class='footer-box bg-dark color-yellow' ng-show='pop_status == true'>

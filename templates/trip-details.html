@@ -25,7 +25,7 @@
 				</div>
 				<div class='m-top-30 text-center'>
 					<hr class='yellow-hr'></hr>
-					<span class='mid-item bg-grey color-white'>A:</span>
+					<span class='mid-item bg-grey color-white'>{{ 'TO' | langTranslate: appConvertedLang['TO'] }}</span>
 				</div>
 				
 				<div class="row ">
@@ -39,18 +39,16 @@
 				</div>
 				
 			</div>
-	<p class='text-center color-yellow bg-light p-head no-margin'>DETALLES VEHICULO</p>
+	<p class='text-center color-yellow bg-light p-head no-margin'>{{ 'VEHICLE DETAILS' | langTranslate: appConvertedLang['VEHICLE_DETAILS'] }}</p>
 			
 			<div class="row no-padding b-border-light">
 						<div class="col  r-border-light p-10 text-center" >
-							<p class='color-white p-head '>CAPACIDAD</p>
+							<p class='color-white p-head '>{{ 'CAB TYPE' | langTranslate: appConvertedLang['CAB_TYPE'] }}</p>
 							<p class='color-gery'>{{details.taxi_type}}</p>
 						</div>
 						<div class="col  p-10 text-center" >
 							<p class='color-white p-head '>{{ 'DRIVER DETAILS' | langTranslate: appConvertedLang['DRIVER_DETAILS'] }}</p>
-							<p class='color-gery'>Nombre: {{Driver.name}}</p>
-							<p class='color-gery'>Celular: {{Driver.phone}}</p>
-							<p class='color-gery'>Placa: {{Driver.car_no}}</p>
+							<p class='color-gery'>{{details.driver}}</p>
 						</div>
 			</div>
 			
@@ -68,10 +66,10 @@
 				</div>
 				<div class="row p-top-5 b-border-light">
 						<div class="col  p-10 col-center" >
-							<p class='color-gery no-margin'>Estado del Servicio</p>
+							<p class='color-gery no-margin'>{{ 'Total Amount' | langTranslate: appConvertedLang['Total_Amount'] }}</p>
 						</div>
 						<div class="col   p-10 text-center col-center" >
-							<p class='pull-right'> <span class='color-gery'>{{details.status}}</span></p>
+							<p class='pull-right'><span class='color-yellow'>$</span> <span class='color-gery'>{{details.amount}}</span></p>
 						</div>
 				</div>
 			
